@@ -16,8 +16,8 @@ const getUsers = () => {
         return;
       }
       const result = await usersService.getUsers();
-      dispatch(success(result.data));
-      localStorage.setItem('users', JSON.stringify(result.data));
+      dispatch(success(result.data.data));
+      localStorage.setItem('users', JSON.stringify(result.data.data));
     } catch (err) {
       const errorMessage = err.response.data;
       dispatch(failure(errorMessage))
